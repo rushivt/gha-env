@@ -7,14 +7,14 @@ on:
 env:
   MONGODB_DB_NAME: gha-demo
 jobs:
-  env:
-    MONGODB_CLUSTER_ADDRESS: cluster0.0zxr2lk.mongodb.net
-    MONGODB_USERNAME: rushivt
-    MONGODB_PASSWORD: bBoDQfRMs5G7a5AW
-    PORT: 8080
   test:
     environment: testing
     runs-on: ubuntu-latest
+    env:
+      MONGODB_CLUSTER_ADDRESS: cluster0.0zxr2lk.mongodb.net
+      MONGODB_USERNAME: rushivt
+      MONGODB_PASSWORD: bBoDQfRMs5G7a5AW
+      PORT: 8080
     steps:
       - name: Get Code
         uses: actions/checkout@v3
